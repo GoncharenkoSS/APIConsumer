@@ -20,12 +20,11 @@ public class Data {
             weather.put("raining", isRaining(t));
             weather.put("sensor", new Sensor("Rad23"));
             HttpEntity<Map<String, Object>> request = new HttpEntity<>(weather);
-            String url = "http://localhost:8080/measurements/add";
+            String url = "http://localhost:8090/measurements/add";
             String response = restTemplate.postForObject(url, request, String.class);
             System.out.println(response);
         }
-        //FOR GET//String url = "https://reqres.in/api/users?page=2";
-        //FOR GET// String response = restTemplate.getForObject(url, String.class);
+
     }
 
     public static boolean isRaining(int t) {

@@ -9,9 +9,9 @@ public class Registration {
         RestTemplate restTemplate = new RestTemplate();
 
         Map<String, Object> regSensor = new HashMap<>();
-        regSensor.put("name", "Rad23");
+        regSensor.put("name", "Okulus");
         HttpEntity<Map<String, Object>> request = new HttpEntity<>(regSensor);
-        String url = "http://localhost:8080/sensors/registration";
+        String url = "http://localhost:8090/sensors/registrations";
         String response = restTemplate.postForObject(url, request, String.class);
         System.out.println(response);
 
